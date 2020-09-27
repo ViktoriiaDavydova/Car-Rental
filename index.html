@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Faster+One|Kanit" rel="stylesheet">
+    <script src="script/script.js"></script>
+    <script src="script/RentalClients.js"></script>
+    <title>Final Project Part 3</title>
+</head>
+
+<body class="background">
+    <div class="grid-container">
+        <div class="header">
+            <div style="margin: 5px;">
+                <img class="logo" src="images/logo.png" alt="logo">
+                <div style="font-family: 'Faster One', cursive; font-size: xx-large;">Dodgy Brakes Car Rental</div>
+                <div>Toll Free: 888.222.22222</div>
+                <div>Monday – Friday 8:00am – 5:00pm</div>
+                <div style="font-size:large">Now is: <span id="date"></span></div>
+                <script>
+                    var toDay = new Date().toLocaleString();
+                    document.getElementById("date").innerHTML = toDay;
+                </script>
+            </div>
+        </div>
+
+        <div class="main">
+            <table>
+                <tr>
+                    <th><label for="qInput">
+                            <span style="font-size:x-large">Enter the client Last name</span>
+                        </label><br>
+                        <input style="width: 200px;" type="text" id="qInput" onkeyup="search()" /><br>
+                        <span id="searchresult"></span></th>
+                    <th>
+                        <form name='car rental' id='inputform'>
+                            <div style="font-size:x-large">Car Rental Form</div>
+                            <span id='lName'></span>
+                            <span id='fName'></span><br>
+                            <span id='adr'></span><br>
+                            <span id='stProv'></span><br>
+                            <span id='emails'></span><br>
+                            <span id='tel'></span><br>
+                            <br><br>
+                            <select name="carSize" id="carsize" disabled>
+                                <option value="15" id="compact">Compact $15/day</option>
+                                <option value="20" id="midsize">Mid-size $20/day</option>
+                                <option value="35" id="luxury">Luxury $15/day</option>
+                                <option value="40" id="vantruck">Van/Truck $15/day</option>
+                            </select>
+                            <br>
+                            <div style="text-align:left; margin-left: 90px;">
+                                <label><input type="checkbox" id="bicyclerack" name="bicycleRack" value="5" disabled>
+                                    Roof
+                                    Rack or Bicycle Rack</label><br>
+                                extra $5/day<br>
+                                <label><input type="checkbox" id="gps" name="GPS" value="10"
+                                        disabled>GPS</label> extra
+                                $10<br>
+                                <label><input type="checkbox" id="childseat" name="childSeat"
+                                        value="0" disabled>Child
+                                    Seat</label> free<br>
+                            </div>
+                            Rent Period <br> (between 1 and 30): <br><input disabled id="duration" type="number"
+                                name="quantity" min="1" max="30"><br>
+                            <button type="button" disabled id="calculateprice" onclick="calculateOrder();">Calculate
+                                Price</button>
+                        </form>
+                    </th>
+                    <th style="font-size:x-large" id="orderinfo">Order Information<br> will be shown below</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer">
+            <h1 class="hmod">Dodgy Brakes Car Rental</h1>
+            <div>Our address: 1301-16 Avenue NW, Calgary AB, T2M 0L4 </div>
+            <div>Email: dodgy.car.rent@gmail.com</div>
+        </div>
+
+    </div>
+</body>
+
+</html>
